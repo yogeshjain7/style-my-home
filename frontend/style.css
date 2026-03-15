@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --bg-dark: #121212;
+  --bg-content: #1E1E1E;
+  --accent-primary: #D4AF37;
+  --text-primary: #EAEAEA;
+  --text-secondary: #a0a0a0;
+  --error-red: #ff4d4d;
+  --warning-orange: #ffb84d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { background: var(--bg-dark); color: var(--text-primary); font-family: 'Inter', sans-serif; }
+
+header { background: rgba(18, 18, 18, 0.9); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; }
+header h1 { font-family: 'Playfair Display', serif; color: var(--accent-primary); }
+
+.nav-button { background: transparent; border: 1px solid var(--accent-primary); color: var(--accent-primary); padding: 8px 16px; border-radius: 5px; cursor: pointer; transition: 0.3s; font-weight: bold; }
+.nav-button:hover { background: var(--accent-primary); color: #000; }
+
+.products { padding: 40px; text-align: center; }
+.products h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px; }
+
+/* Filter Controls */
+.filter-controls { margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+#search-bar { width: 100%; max-width: 500px; padding: 12px 20px; border: 1px solid rgba(255, 255, 255, 0.1); background: var(--bg-content); color: var(--text-primary); border-radius: 30px; font-size: 1rem; }
+.category-filters button { padding: 10px 20px; border: 1px solid rgba(255, 255, 255, 0.2); color: var(--text-secondary); background: transparent; border-radius: 30px; cursor: pointer; margin: 0 5px; transition: all 0.3s; }
+.category-filters button:hover { color: var(--text-primary); border-color: var(--accent-primary); }
+.category-filters button.active { background: var(--accent-primary); color: #000; font-weight: bold; border-color: var(--accent-primary); }
+
+/* Grid and Cards */
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.product-card { background: var(--bg-content); border-radius: 10px; border: 1px solid #333; padding: 20px; text-align: left; display: flex; flex-direction: column; position: relative; }
+.product-card h3 { margin: 15px 0 5px; font-family: 'Playfair Display', serif; }
+
+/* Will It Fit? Badge */
+.fit-badge { display: inline-flex; align-items: center; background: rgba(255, 184, 77, 0.15); color: var(--warning-orange); font-size: 0.75rem; font-weight: bold; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; border: 1px solid rgba(255, 184, 77, 0.3); }
+
+.product-dimensions { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px; }
+
+/* Color Customizer Swatches */
+.color-picker { display: flex; gap: 10px; margin-bottom: 15px; }
+.color-swatch { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #333; cursor: pointer; transition: transform 0.2s, border-color 0.2s; }
+.color-swatch:hover { transform: scale(1.15); border-color: var(--accent-primary); }
+
+model-viewer { width: 100%; height: 250px; background-color: #252525; border-radius: 8px; margin-bottom: 15px; flex-grow: 1; outline: none; }
+
+.button-row { display: flex; gap: 10px; margin-top: auto; }
+.btn { background: var(--accent-primary); color: #000; padding: 12px; border: none; border-radius: 6px; width: 100%; font-weight: bold; cursor: pointer; text-align: center; }
+.btn:hover { background: #E0C15F; }
+.snapshot-btn { background: #333; color: var(--text-primary); border: 1px solid #444; }
+.snapshot-btn:hover { background: #444; }
+
+/* Modal & Form Styles */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.modal-content { background: var(--bg-content); padding: 40px; border-radius: 10px; width: 90%; max-width: 400px; position: relative; border: 1px solid #333; }
+.modal-close { position: absolute; top: 15px; right: 20px; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; }
+
+.form-input { width: 100%; padding: 12px; margin-bottom: 15px; background: #121212; border: 1px solid #444; color: white; border-radius: 6px; }
+.form-input:focus { outline: 1px solid var(--accent-primary); }
+
+.error-msg { color: var(--error-red); font-size: 0.85rem; margin-top: -5px; margin-bottom: 15px; display: none; text-align: left; line-height: 1.4; }
+.form-switch { text-align: center; margin-top: 15px; font-size: 0.9rem; }
+.form-switch a { color: var(--accent-primary); text-decoration: none; font-weight: bold; }
