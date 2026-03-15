@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const backendUrl = 'http://localhost:5000'; 
+  const backendUrl = 'https://style-my-home.onrender.com'; 
   let isLoggedIn = !!localStorage.getItem('token');
   let pendingAction = null;
 
